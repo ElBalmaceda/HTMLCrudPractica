@@ -6,26 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 th:text="${persona.id == null} ? 'Nueva Persona' : 'Editar Persona' "></h1>
+    <h1 th:text="${persona.id == null ? 'Nueva Persona' : 'Editar Persona'}"></h1>
     <form th:action="@{/personas}" th:object="${persona}" method="post">
-        <input type="hidden"  th:field="*{id}">
+        <input type="hidden" th:field="*{id}">
         <br>
-        <label for="">Nombre:</label>
-        <input type="text" th:field="*{nombre}">
+        <label for="nombre">Nombre:</label>
+        <input type="text" th:field="*{nombre}" id="nombre">
         <br>
-        <label for="">Apellido:</label>
-        <input type="text" th:field="*{apellido}">
+        <label for="apellido">Apellido:</label>
+        <input type="text" th:field="*{apellido}" id="apellido">
         <br>
-        <label for="">Email:</label>
-        <input type="text" th:field="*{email}">
+        <label for="email">Email:</label>
+        <input type="text" th:field="*{email}" id="email">
         <br>
-        <label for="">Telefono:</label>
-        <input type="text" th:field="*{telefono}">
+        <label for="telefono">Telefono:</label>
+        <input type="text" th:field="*{telefono}" id="telefono">
         <br>
-        <label for="">Direccion:</label>
-        <input type="text" th:field="*{direccion}">
+        <label for="direccion">Direccion:</label>
+        <input type="text" th:field="*{direccion}" id="direccion">
         <button type="submit">Guardar</button>
     </form>
-    <a href="/personas">Volver a la lista</a>
+    <a href="/personas">Lista</a>
 </body>
 </html>

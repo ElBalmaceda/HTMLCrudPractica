@@ -29,11 +29,12 @@
                 <td th:text="${persona.telefono}"></td>
                 <td th:text="${persona.direccion}"></td>
                 <td>
-                    <a th:href="@{/personas/editar/{id}({id=$persona.id})}">Editar</a>
-                    <a th:href="@{/personas/eliminar/{id}({id=$persona.id})}">Eliminar</a>
-                </td>
+                    <a class="btn btn-outline-info" th:href="@{/personas/editar/{id}(id=${persona.id})}">Editar</a>
+                    <a class="btn btn-danger" th:href="@{/personas/eliminar/{id}(id=${persona.id})}">Eliminar</a>
+                </td>  
             </tr>
         </tbody>
     </table>
+    <a href="/personas/nuevo">Nueva persona</a>
 </body>
 </html>

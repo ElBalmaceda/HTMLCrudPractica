@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 th:text="${persona.id == null} ? 'Nueva Persona' : 'Editar Persona' "></h1>
+    <form th:action="@{/personas}" th:object="${persona}" method="post">
+        <input type="hidden"  th:field="*{id}">
+        <br>
+        <label for="">Nombre:</label>
+        <input type="text" th:field="*{nombre}">
+        <br>
+        <label for="">Apellido:</label>
+        <input type="text" th:field="*{apellido}">
+        <br>
+        <label for="">Email:</label>
+        <input type="text" th:field="*{email}">
+        <br>
+        <label for="">Telefono:</label>
+        <input type="text" th:field="*{telefono}">
+        <br>
+        <label for="">Direccion:</label>
+        <input type="text" th:field="*{direccion}">
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="/personas">Volver a la lista</a>
+</body>
+</html>

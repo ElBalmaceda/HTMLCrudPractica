@@ -41,8 +41,16 @@ public class PersonaController
 	@GetMapping("/editar/{id}")
 	public String mostrarFormularioEditarPersona(@PathVariable Long id, Model model) 
 	{
-		model.addAttribute("persona", personaService.findById(id));
-		return "persona-form";
+		try 
+		{
+			model.addAttribute("persona", personaService.findById(id));
+			return "persona-form";
+		}
+		catch(Exception e) 
+		{
+			return "index";
+		}
+		
 	}
 
 	@GetMapping("/eliminar/{id}")
